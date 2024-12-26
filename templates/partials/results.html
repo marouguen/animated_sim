@@ -1,0 +1,42 @@
+<div class="results">
+  <h2>Production Parameters</h2>
+  <ul>
+    <li><strong>Start Date:</strong> {{ production_parameters.start_date }}</li>
+    <li><strong>Planned Shifts:</strong> {{ production_parameters.shifts }}</li>
+    <li>
+      <strong>Hours per Shift:</strong> {{ production_parameters.hours_per_shift
+      }}
+    </li>
+    <li>
+      <strong>Operators per Shift:</strong> {{
+      production_parameters.operators_per_shift }}
+    </li>
+    <li><strong>Scrap Rate:</strong> {{ production_parameters.scrap_rate }}</li>
+    <li>
+      <strong>Downtime Rate:</strong> {{ production_parameters.downtime_rate }}
+    </li>
+  </ul>
+</div>
+
+<div class="results">
+  <h2>Metrics</h2>
+  <ul>
+    <li>
+      <strong>Total Production (Units):</strong> {{ metrics.total_production }}
+    </li>
+    <li>
+      <strong>Average Lead Time (Hours):</strong> {{ metrics.average_lead_time
+      }}
+    </li>
+    <li>
+      <strong>On-Time Delivery (%):</strong> {{
+      metrics.on_time_delivery_percentage }}%
+    </li>
+  </ul>
+</div>
+
+<h2>Order Completion Details</h2>
+{{ table|safe }}
+
+<h2>Daily Metrics</h2>
+{{ daily_table|safe }}

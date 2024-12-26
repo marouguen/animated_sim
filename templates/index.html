@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% block content %}
+<h1>Production Simulation</h1>
+<form
+  method="POST"
+  enctype="multipart/form-data"
+  hx-post="/update-results"
+  hx-target="#results"
+>
+  <label for="start_date">Start Date:</label>
+  <input type="datetime-local" id="start_date" name="start_date" required />
+  <label for="shifts">Shifts per Day:</label>
+  <input type="number" id="shifts" name="shifts" required />
+  <label for="hours_per_shift">Hours per Shift:</label>
+  <input type="number" id="hours_per_shift" name="hours_per_shift" required />
+  <label for="operators_per_shift">Operators per Shift:</label>
+  <input
+    type="number"
+    id="operators_per_shift"
+    name="operators_per_shift"
+    required
+  />
+  <label for="scrap_rate">Scrap Rate (%):</label>
+  <input type="number" step="0.01" id="scrap_rate" name="scrap_rate" required />
+  <label for="downtime_rate">Downtime Rate (%):</label>
+  <input
+    type="number"
+    step="0.01"
+    id="downtime_rate"
+    name="downtime_rate"
+    required
+  />
+  <label for="orders_file">Upload Orders File:</label>
+  <input
+    type="file"
+    id="orders_file"
+    name="orders_file"
+    accept=".csv"
+    required
+  />
+  <button type="submit">Run Simulation</button>
+</form>
+
+<div id="results">
+  <!-- Results will be dynamically loaded here -->
+</div>
+{% endblock %}
